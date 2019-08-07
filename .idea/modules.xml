@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/apigateway/apigateway.iml" filepath="$PROJECT_DIR$/apigateway/apigateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microserviceconfig/microserviceconfig.iml" filepath="$PROJECT_DIR$/microserviceconfig/microserviceconfig.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-server/microservices.iml" filepath="$PROJECT_DIR$/eureka-server/microservices.iml" />
+      <module fileurl="file://$PROJECT_DIR$/muzixapplication/muzixapplication.iml" filepath="$PROJECT_DIR$/muzixapplication/muzixapplication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/muzixpattern.iml" filepath="$PROJECT_DIR$/muzixpattern.iml" />
+    </modules>
+  </component>
+</project>

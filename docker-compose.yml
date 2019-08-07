@@ -1,0 +1,67 @@
+version: "2.1"
+services:
+  apigateway:
+    image: apigateway-img
+    build: apigateway/
+    container_name: apigateway-container
+    restart: always
+    network_mode: host
+    hostname: localhost
+    depends_on:
+      - eureka-server
+      - muzixapplication
+    ports:
+      - 8092:8092
+    healthcheck:
+      test: "exit 0"
+
+  eureka-server:
+    image: eurekaserver-img
+    build: eureka-server/
+    container_name: eurekaserver-container
+    restart: always
+    network_mode: host
+    hostname: localhost
+    ports:
+      - 9092:9092
+    healthcheck:
+      test: "exit 0"
+
+  microserviceconfig:
+    image: configserver-img
+    build: microserviceconfig/
+    container_name: configserver-container
+    restart: always
+    network_mode: host
+    hostname: localohost
+    ports:
+      - 8891:8891
+    healthcheck:
+      test: "exit 0"
+
+  mongo:
+    image: mongo:3.4-jessie
+    ports:
+      - 27017:27017
+    container_name: mongo
+    network_mode: host
+    hostname: localhost
+    restart: always
+    healthcheck:
+      test: "exit 0"
+
+  muzixapplication:
+    image: muzixapplication-img
+    build: muzixapplication/
+    container_name: muzixapplication-container
+    restart: always
+    network_mode: host
+    hostname: localhost
+    depends_on:
+      - eureka-server
+      - microserviceconfig
+      - mongo
+    ports:
+      - 8080:8080
+    healthcheck:
+      test: "exit 0"
